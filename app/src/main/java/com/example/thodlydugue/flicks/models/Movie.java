@@ -25,10 +25,17 @@ public class Movie {
     String originalTitle;
     String overview;
 
+    public String getBackdrop_path() {
+        return String.format("https://image.tmdb.org/t/p/w342/%s", backdrop_path);
+    }
+
+    String backdrop_path;
+
     public Movie(JSONObject jsonObject) throws JSONException {
         this.posterPath = jsonObject.getString("poster_path");
         this.originalTitle = jsonObject.getString("original_title");
         this.overview = jsonObject.getString("overview");
+        this.backdrop_path = jsonObject.getString("backdrop_path");
 
     }
 
