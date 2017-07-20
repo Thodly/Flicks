@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     movieJsonResults = response.getJSONArray("results");
                     movies.addAll(Movie.fromJSONArray(movieJsonResults));
-                    movieAdapter.notifyDataSetChanged();
+                   movieAdapter.notifyDataSetChanged();
                     Log.d("DEBUG", movies.toString());
                 }
                 catch (JSONException e)
