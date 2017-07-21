@@ -31,6 +31,7 @@ public class MovieArrayAdapter extends ArrayAdapter<Movie>{
     public View getView(int position, View convertView, ViewGroup parent){
         Movie movie = getItem(position);
         ViewHolder viewHolder;
+
         if (convertView == null)
         {
             viewHolder = new ViewHolder();
@@ -57,13 +58,16 @@ public class MovieArrayAdapter extends ArrayAdapter<Movie>{
         int orientation = convertView.getResources().getConfiguration().orientation;
         if (orientation == Configuration.ORIENTATION_PORTRAIT) {
             image = movie.getPosterPath().toString();
-            Picasso.with(getContext()).load(image).into(ivImage);
+            Picasso.with(getContext()).load(image).placeholder(R.drawable.play).into(ivImage);
+
             // ...
         } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
             image = movie.getBackdrop_path().toString();
-            Picasso.with(getContext()).load(image).into(ivImage);
+            Picasso.with(getContext()).load(image).placeholder(R.drawable.play).into(ivImage);
             // ...
         }
+
+
         return convertView;
     }
 }
