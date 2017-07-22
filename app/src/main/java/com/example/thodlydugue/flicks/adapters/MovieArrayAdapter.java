@@ -11,11 +11,13 @@ import android.widget.TextView;
 
 import com.example.thodlydugue.flicks.R;
 import com.example.thodlydugue.flicks.models.Movie;
+import com.jakewharton.picasso.OkHttp3Downloader;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
 import jp.wasabeef.picasso.transformations.RoundedCornersTransformation;
+import okhttp3.OkHttpClient;
 
 /**
  * Created by thodlydugue on 7/19/2017.
@@ -55,16 +57,16 @@ public class MovieArrayAdapter extends ArrayAdapter<Movie>{
         viewHolder.tvOverview.setText(movie.getOverview());
 
         String image;
-
+        
         int orientation = convertView.getResources().getConfiguration().orientation;
         if (orientation == Configuration.ORIENTATION_PORTRAIT) {
             image = movie.getPosterPath().toString();
-            Picasso.with(getContext()).load(image).placeholder(R.drawable.play).transform(new RoundedCornersTransformation(10, 10)).into(ivImage);
+            Picasso.with(getContext()).load(image).placeholder(R.drawable.play).transform(new RoundedCornersTransformation(15, 15)).into(ivImage);
 
             // ...
         } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
             image = movie.getBackdrop_path().toString();
-            Picasso.with(getContext()).load(image).placeholder(R.drawable.play).transform(new RoundedCornersTransformation(10, 10)).into(ivImage);
+            Picasso.with(getContext()).load(image).placeholder(R.drawable.play).transform(new RoundedCornersTransformation(15, 15)).into(ivImage);
             // ...
         }
 
