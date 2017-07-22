@@ -15,6 +15,8 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
+import jp.wasabeef.picasso.transformations.RoundedCornersTransformation;
+
 /**
  * Created by thodlydugue on 7/19/2017.
  */
@@ -23,6 +25,7 @@ public class MovieArrayAdapter extends ArrayAdapter<Movie>{
         TextView tvTitle;
         TextView tvOverview;
     }
+
     public MovieArrayAdapter(Context context, List<Movie> movies){
         super(context, android.R.layout.simple_list_item_1, movies);
     }
@@ -47,23 +50,21 @@ public class MovieArrayAdapter extends ArrayAdapter<Movie>{
         ImageView ivImage = (ImageView) convertView.findViewById(R.id.ivMovieImage);
         ivImage.setImageResource(0);
 
-        TextView tvTitle = (TextView) convertView.findViewById(R.id.tvTitle);
-        TextView tvOverview = (TextView) convertView.findViewById(R.id.tvOverview);
 
         viewHolder.tvTitle.setText(movie.getOriginalTitle());
         viewHolder.tvOverview.setText(movie.getOverview());
 
-
         String image;
+
         int orientation = convertView.getResources().getConfiguration().orientation;
         if (orientation == Configuration.ORIENTATION_PORTRAIT) {
             image = movie.getPosterPath().toString();
-            Picasso.with(getContext()).load(image).placeholder(R.drawable.play).into(ivImage);
+            Picasso.with(getContext()).load(image).placeholder(R.drawable.play).transform(new RoundedCornersTransformation(10, 10)).into(ivImage);
 
             // ...
         } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
             image = movie.getBackdrop_path().toString();
-            Picasso.with(getContext()).load(image).placeholder(R.drawable.play).into(ivImage);
+            Picasso.with(getContext()).load(image).placeholder(R.drawable.play).transform(new RoundedCornersTransformation(10, 10)).into(ivImage);
             // ...
         }
 

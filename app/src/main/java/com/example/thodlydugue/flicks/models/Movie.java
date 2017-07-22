@@ -43,7 +43,6 @@ public class Movie {
         ArrayList<Movie> results = new ArrayList<>();
         for (int x = 0; x < array.length(); x++) {
             try {
-                /**new Movie(array.getJSONObject(x));**/
                 results.add(new Movie(array.getJSONObject(x)));
             } catch (JSONException e) {
                 e.printStackTrace();

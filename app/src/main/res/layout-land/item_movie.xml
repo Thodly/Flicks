@@ -33,6 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvTitle"
         android:layout_toEndOf="@+id/ivMovieImage"
+        android:maxLines="5"
         android:textColor="@android:color/background_light"
         android:textSize="12sp"
         tools:text="Gru and his wife Lucy must stop former '80s child star Balthazar Bratt from achieving world domination" />
