@@ -22,9 +22,11 @@
         android:layout_alignParentTop="true"
         android:layout_toEndOf="@+id/ivMovieImage"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="@android:color/background_light"
-        android:textSize="14sp"
+        android:textColor="@android:color/holo_green_light"
+        android:textSize="16sp"
+        android:textStyle="bold|italic"
         tools:text="Despicable Me 3" />
+
 
     <TextView
         android:id="@+id/tvOverview"
@@ -35,8 +37,7 @@
         android:layout_toEndOf="@+id/ivMovieImage"
         android:maxLines="10"
         android:textColor="@android:color/background_light"
-        android:textSize="12sp"
-        android:textStyle="bold|italic"
-        tools:text="Gru and his wife Lucy must stop former '80s child star Balthazar Bratt from achieving world domination" />
+        android:textSize="13sp"
+       tools:text="Gru and his wife Lucy must stop former '80s child star Balthazar Bratt from achieving world domination" />
 
 </RelativeLayout>
